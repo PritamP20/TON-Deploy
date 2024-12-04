@@ -53,7 +53,7 @@ const Post: React.FC<PostProps> = ({wallet}) => {
   useEffect(() => {
     const getReviewsUser = async () => {
       try {
-        const req = await axios.get(`VITE_SERVER_URL/review/user/${user?.primaryEmailAddress?.emailAddress}`)
+        const req = await axios.get(`${import.meta.env.VITE_SERVER_URL}/review/user/${user?.primaryEmailAddress?.emailAddress}`)
         setUserReview(req.data.data)
       } catch (error) {
         console.log("error: ", error)
@@ -110,7 +110,7 @@ const Post: React.FC<PostProps> = ({wallet}) => {
         "userId": user?.primaryEmailAddress?.emailAddress
       }
 
-      await axios.post("VITE_SERVER_URL/review/", newMessage);
+      await axios.post(`${import.meta.env.VITE_SERVER_URL}/review/`, newMessage);
     } catch (error) {
       console.log("Error sending message:", error);
     }
