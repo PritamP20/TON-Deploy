@@ -14,7 +14,7 @@ const Reviews: React.FC<ProfileProps> = ({ address }) => {
   useEffect(() => {
     const getReviews = async () => {
       try {
-        const req = await axios.get("http://localhost:8081/review/");
+        const req = await axios.get("VITE_SERVER_URL/review/");
         console.log(req.data.data);  // Log data to inspect the structure
         setReviews(req.data.data);  // Set reviews to state
       } catch (error) {
@@ -44,7 +44,7 @@ const Reviews: React.FC<ProfileProps> = ({ address }) => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8081/review/${reviewId}/comment`,
+        `VITE_SERVER_URL/review/${reviewId}/comment`,
         { walletAddress, comment: commentText }
       );
       console.log('Comment added:', response.data);
