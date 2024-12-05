@@ -15,7 +15,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "target": "ES6"
+    "target": "ES2022"
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
